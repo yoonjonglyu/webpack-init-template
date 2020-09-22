@@ -4,7 +4,11 @@
   "description": "> 기본 환경 템플릿",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server --env.env=dev",
+    "dev:bundleanalyzer": "npm run dev -- --env.addons=bundleanalyzer",
+    "prebuild": "rimraf dist",
+    "build": "cross-env NODE_ENV=production webpack -p --env.env=prod",
+    "build:bundleanalyzer": "npm run build -- --env.addons=bundleanalyzer"
   },
   "repository": {
     "type": "git",
@@ -20,20 +24,23 @@
   },
   "homepage": "https://github.com/yoonjonglyu/webpack-init-template#readme",
   "dependencies": {
-    "babel-core": "^6.26.3",
     "babel-loader": "^8.1.0",
     "babel-preset-env": "^1.7.0",
     "chalk": "^4.1.0",
     "cross-env": "^7.0.2",
     "css-loader": "^4.3.0",
-    "extract-text-webpack-plugin": "^3.0.2",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^4.5.0",
     "postcss-loader": "^4.0.2",
+    "rimraf": "^3.0.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.2",
     "webpack-bundle-analyzer": "^3.9.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6"
   }
 }
