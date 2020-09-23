@@ -1,6 +1,6 @@
 const commonPaths = require('./common-paths');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
     mode : 'production',
@@ -17,36 +17,16 @@ const config = {
         rules : [
             {
                 test : /\.css*/,
-                use : ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use : [
-                        {
-                            loader : 'css-loader',
-                            options : {
-                                modules : true,
-                                importLoaders: 1,
-                                camelCase : true,
-                                sourceMap : true
-                            }
-                        },
-                        {
-                            loader : 'postcss-loader',
-                            options : {
-                                config : {
-                                    ctx : {
-                                        autoprefixer : {
-                                            browsers : 'last 2 versions'
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    ]
-                })
+                use : [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'postcss-loader'
+                ]
             }
         ]
     },
     optimization : {
+        minimize : true,
         splitChunks: {
             cacheGroups : {
                 vendor : {
@@ -59,11 +39,12 @@ const config = {
         }
       },
     plugins : [
-        new ExtractTextPlugin({
+        new MiniCssExtractPlugin({
             filename : 'css/styles.[hash].css',
-            allChunks : true
-        })
-    ]
+            allChunks : true,
+            sourceMap: true,
+      }),
+    ],
 };
 
 module.exports = config;
