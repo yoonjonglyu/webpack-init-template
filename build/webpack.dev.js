@@ -14,6 +14,13 @@ const config = {
     module : {
         rules : [
             {
+                test : /\.(png|jpe?g|git)$/,
+                loader : 'file-loader',
+                options : {
+                    name : `[contenthash].[ext]`,
+                }
+            },
+            {
                 test : /\.css$/,
                 use : [
                     {
@@ -23,7 +30,6 @@ const config = {
                         loader : 'css-loader',
                         options : {
                             modules : true,
-                            camelCase : true,
                             sourceMap : true
                         }
                     }

@@ -16,9 +16,21 @@ const config = {
     module : {
         rules : [
             {
+                test : /\.(png|jpe?g|git)$/,
+                loader : 'file-loader',
+                options : {
+                    name : `asset/[contenthash].[ext]`,
+                }
+            },
+            {
                 test : /\.css*/,
                 use : [
-                    MiniCssExtractPlugin.loader,
+                   {
+                    loader : MiniCssExtractPlugin.loader,
+                    options : {
+                        publicPath: 'asset/css/',
+                    }
+                   },
                     'css-loader',
                     'postcss-loader'
                 ]
