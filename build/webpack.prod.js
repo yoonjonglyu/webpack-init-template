@@ -19,7 +19,7 @@ const config = {
                 test : /\.(png|jpe?g|git)$/,
                 loader : 'file-loader',
                 options : {
-                    name : `asset/[contenthash].[ext]`,
+                    name : `assets/[contenthash].[ext]`,
                 }
             },
             {
@@ -28,7 +28,7 @@ const config = {
                    {
                     loader : MiniCssExtractPlugin.loader,
                     options : {
-                        publicPath: 'asset/css/',
+                        publicPath: 'assets/css/',
                     }
                    },
                     'css-loader',
