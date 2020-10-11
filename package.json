@@ -33,6 +33,7 @@
     "autoprefixer": "^10.0.1",
     "babel-loader": "^8.1.0",
     "chalk": "^4.1.0",
+    "core-js": "^3.6.5",
     "cross-env": "^7.0.2",
     "css-loader": "^4.3.0",
     "file-loader": "^6.1.0",
