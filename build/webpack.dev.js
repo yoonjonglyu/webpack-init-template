@@ -10,7 +10,7 @@ const config = {
     output : {
         filename : '[name].[hash].js'
     },
-    devtool : 'inline-sourse-map',
+    devtool : 'eval',
     module : {
         rules : [
             {
