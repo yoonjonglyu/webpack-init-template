@@ -4,11 +4,11 @@
   "description": "> 기본 환경 템플릿",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --env.env=dev",
-    "dev:bundleanalyzer": "npm run dev -- --env.addons=bundleanalyzer",
+    "dev": "webpack-dev-server --env env=dev",
+    "dev:bundleanalyzer": "npm run dev -- --env addons=bundleanalyzer",
     "prebuild": "rimraf dist",
-    "build": "cross-env NODE_ENV=production webpack -p --env.env=prod",
-    "build:bundleanalyzer": "npm run build -- --env.addons=bundleanalyzer"
+    "build": "cross-env NODE_ENV=production webpack --progress --env env=prod",
+    "build:bundleanalyzer": "npm run build -- --env addons=bundleanalyzer"
   },
   "repository": {
     "type": "git",
@@ -37,16 +37,16 @@
     "cross-env": "^7.0.2",
     "css-loader": "^4.3.0",
     "file-loader": "^6.1.0",
-    "html-webpack-plugin": "^4.5.0",
+    "html-webpack-plugin": "^4.5.2",
     "mini-css-extract-plugin": "^0.11.2",
     "postcss": "^8.1.0",
     "postcss-loader": "^4.0.2",
     "rimraf": "^3.0.2",
     "style-loader": "^1.2.1",
-    "webpack": "^4.44.2",
-    "webpack-bundle-analyzer": "^3.9.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.1.4"
+    "webpack": "^5.61.0",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.4.0",
+    "webpack-merge": "^5.8.0"
   }
 }
