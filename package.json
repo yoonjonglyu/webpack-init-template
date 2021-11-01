@@ -30,6 +30,7 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
     "autoprefixer": "^10.0.1",
+    "babel-jest": "^27.3.1",
     "babel-loader": "^8.2.3",
     "chalk": "^4.1.2",
     "core-js": "^3.19.0",
