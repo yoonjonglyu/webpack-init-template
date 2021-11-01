@@ -8,7 +8,8 @@
     "dev:bundleanalyzer": "npm run dev -- --env addons=bundleanalyzer",
     "prebuild": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack --progress --env env=prod",
-    "build:bundleanalyzer": "npm run build -- --env addons=bundleanalyzer"
+    "build:bundleanalyzer": "npm run build -- --env addons=bundleanalyzer",
+    "test": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "css-loader": "^4.3.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.2",
+    "jest": "^27.3.1",
     "mini-css-extract-plugin": "^0.11.2",
     "postcss": "^8.3.11",
     "postcss-loader": "^4.3.0",
