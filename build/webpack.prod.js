@@ -10,7 +10,7 @@ const config = {
     output : {
         filename : '[name].[chunkhash].js',
         path : commonPaths.outputPath,
-        publicPath: '/'
+        publicPath: './'
     },
     devtool : 'source-map',
     module : {
