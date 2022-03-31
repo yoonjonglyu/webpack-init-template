@@ -37,10 +37,9 @@ const config = {
       },
     ],
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ],
-  devServer: { // 웹팩서버
+  plugins: [new webpack.HotModuleReplacementPlugin()],
+  devServer: {
+    // 웹팩서버
     host: 'localhost',
     port: port,
     historyApiFallback: true,
